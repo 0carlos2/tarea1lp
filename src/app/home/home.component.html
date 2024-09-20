@@ -19,3 +19,27 @@
             </tr>
         </ng-template>
 </p-table>
+
+<p-table 
+    [value]="secciones" 
+    styleClass="p-datatable-gridlines" 
+    [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>ESTADO</th>
+                <th>CATEGORIAID</th>
+                <th>CATEGORIA ESTADO</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.nombre }}</td>
+                <td>{{ product.estado }}</td>
+                <td>{{ product.categoria?.id }}</td>
+                <td>{{ product.categoria?.estado }}</td>
+            </tr>
+        </ng-template>
+</p-table>
